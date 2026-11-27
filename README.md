@@ -5,6 +5,10 @@ the existing Unity Health desktop and Android source. The health pages, provider
 sync, journal, goals and original MIT license are preserved. Screen time is an
 additional, read-only feature of the existing paired Unity connection.
 
+## Relationship to other Unity projects
+
+WellBeing is maintained in the [Unity hub](https://github.com/MukhilDharan5/Unity), alongside the separate [Unity Gallery](../Unity_Gallery/README.md). [Unity Linux](https://github.com/MukhilDharan5/Unity_Linux) owns the desktop daemon and approved D-Bus operations, while [Unity Android](https://github.com/MukhilDharan5/Unity_Android) provides the opted-in phone screen-time bridge. The WellBeing Android app in this directory retains the Health Connect and display functions. Install matching platform updates for phone synchronization.
+
 ## Run and install
 
 Requires Python 3.10+, PyGObject, GTK 4.12+, libadwaita 1.5+, Cairo and a GNOME
