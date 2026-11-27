@@ -7,7 +7,7 @@ additional, read-only feature of the existing paired Unity connection.
 
 ## Relationship to other Unity projects
 
-WellBeing is maintained in the [Unity hub](https://github.com/MukhilDharan5/Unity), alongside the separate [Unity Gallery](../Unity_Gallery/README.md). [Unity Linux](https://github.com/MukhilDharan5/Unity_Linux) owns the desktop daemon and approved D-Bus operations, while [Unity Android](https://github.com/MukhilDharan5/Unity_Android) provides the opted-in phone screen-time bridge. The WellBeing Android app in this directory retains the Health Connect and display functions. Install matching platform updates for phone synchronization.
+WellBeing is an independent application in the [Unity project family](https://github.com/MukhilDharan5/Unity), alongside the separate [Unity Gallery](https://github.com/MukhilDharan5/Unity_Gallery). [Unity Linux](https://github.com/MukhilDharan5/Unity_Linux) owns the desktop daemon and approved D-Bus operations, while [Unity Android](https://github.com/MukhilDharan5/Unity_Android) provides the opted-in phone screen-time bridge. The WellBeing Android app in this repository retains the Health Connect and display functions. Install matching platform updates for phone synchronization.
 
 ## Run and install
 
@@ -17,6 +17,7 @@ native Wayland apps. Other desktop environments currently have no foreground
 tracking adapter; the viewer and phone sync still work there.
 
 ```sh
+git clone https://github.com/MukhilDharan5/Unity_WellBeing.git
 cd Unity_WellBeing
 ./run.sh
 python3 -m unittest discover -s tests
