@@ -16,7 +16,13 @@ or KDE Plasma 6 session. The desktop recorder uses GNOME Shell or KWin, includin
 native Wayland apps. Other desktop environments currently have no foreground
 tracking adapter; the viewer and phone sync still work there.
 
+Clone [Unity Linux](https://github.com/MukhilDharan5/Unity_Linux) beside this
+repository before installing or staging WellBeing; its checkout supplies the
+GNOME extension. For a different layout, pass `--linux-source /path/to/Unity_Linux`
+to `install.py`.
+
 ```sh
+git clone https://github.com/MukhilDharan5/Unity_Linux.git  # if not already present
 git clone https://github.com/MukhilDharan5/Unity_WellBeing.git
 cd Unity_WellBeing
 ./run.sh

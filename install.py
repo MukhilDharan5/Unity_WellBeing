@@ -20,10 +20,16 @@ def main():
     parser.add_argument("--prefix", type=Path, default=Path.home() / ".local")
     parser.add_argument("--destdir", type=Path, help="Stage all files for packaging and review")
     parser.add_argument("--data-dir", type=Path)
+    parser.add_argument("--linux-source", type=Path, default=ROOT.parent / "Unity_Linux",
+                        help="Unity Linux checkout containing the GNOME extension")
     options = parser.parse_args()
     prefix = options.prefix.absolute()
     if any(c in str(prefix) for c in '\n\r\t=%'):
         raise SystemExit("Unsupported prefix characters")
+    extension = "unity-continuity@mukhildharan5.github.io"
+    extension_source = options.linux_source / "packaging/gnome-shell" / extension
+    if any(not (extension_source / name).is_file() for name in ("extension.js", "metadata.json")):
+        raise SystemExit("Unity Linux GNOME extension not found; clone Unity_Linux beside this checkout or pass --linux-source /path/to/Unity_Linux")
     def stage(path):
         return options.destdir / path.relative_to("/") if options.destdir else path
     def write(path, value, mode=0o644):
@@ -59,10 +65,9 @@ def main():
         write(prefix / "share/icons/hicolor/scalable/apps" / source.name, source.read_text())
     write(prefix / "share/dbus-1/services" / (APP_ID + ".service"),
           "[D-BUS Service]\nName=" + APP_ID + "\nExec=/usr/bin/python3 " + quote(wrapper) + " --tracker\n")
-    extension = "unity-continuity@mukhildharan5.github.io"
     for filename in ("extension.js", "metadata.json"):
         write(prefix / "share/gnome-shell/extensions" / extension / filename,
-              (ROOT.parent / "Unity_Linux/packaging/gnome-shell" / extension / filename).read_text())
+              (extension_source / filename).read_text())
     shutil.copytree(ROOT / "packaging/kwin/unity-wellbeing", stage(prefix / "share/kwin/scripts/unity-wellbeing"), dirs_exist_ok=True)
     for name in ("README.md", "LICENSE"):
         write(prefix / "share/doc/unity-wellbeing" / name, (ROOT / name).read_text())
