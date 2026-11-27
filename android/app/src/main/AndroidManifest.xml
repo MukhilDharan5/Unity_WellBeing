@@ -1,0 +1,60 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <permission android:name="org.unityconnect.health.permission.READ_HEALTH"
+        android:protectionLevel="signature|knownSigner" android:knownCerts="@array/companion_certificates" />
+    <uses-permission android:name="org.unityconnect.health.permission.READ_HEALTH" />
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+    <!-- Read existing provider records only. No sensors, location, activity
+         recognition, network, background collection or health-write access. -->
+    <uses-permission android:name="android.permission.health.READ_STEPS" />
+    <uses-permission android:name="android.permission.health.READ_ACTIVE_CALORIES_BURNED" />
+    <uses-permission android:name="android.permission.health.READ_TOTAL_CALORIES_BURNED" />
+    <uses-permission android:name="android.permission.health.READ_EXERCISE" />
+    <uses-permission android:name="android.permission.health.READ_SLEEP" />
+    <uses-permission android:name="android.permission.health.READ_RESTING_HEART_RATE" />
+    <uses-permission android:name="android.permission.health.READ_WEIGHT" />
+    <uses-permission android:name="android.permission.health.READ_HYDRATION" />
+    <uses-permission android:name="android.permission.health.READ_NUTRITION" />
+    <uses-permission android:name="android.permission.health.READ_DISTANCE" />
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+        <package android:name="com.google.android.apps.healthdata" />
+        <package android:name="com.google.android.apps.fitness" />
+        <package android:name="org.unityconnect.companion" />
+        <package android:name="org.unityconnect.companion.preview" />
+        <package android:name="org.unityconnect.companion.preview.next" />
+    </queries>
+    <application
+        android:label="Unity WellBeing"
+        android:icon="@drawable/ic_health"
+        android:roundIcon="@drawable/ic_health"
+        android:theme="@style/Theme.UnityHealth"
+        android:allowBackup="false"
+        android:supportsRtl="true"
+        android:enableOnBackInvokedCallback="true">
+        <activity android:name=".MainActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="androidx.health.ACTION_SHOW_PERMISSIONS_RATIONALE" />
+            </intent-filter>
+        </activity>
+        <activity-alias android:name=".ViewPermissionUsageActivity" android:exported="true"
+            android:targetActivity=".MainActivity"
+            android:permission="android.permission.START_VIEW_PERMISSION_USAGE">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW_PERMISSION_USAGE" />
+                <category android:name="android.intent.category.HEALTH_PERMISSIONS" />
+            </intent-filter>
+        </activity-alias>
+        <service android:name=".HealthIpcService" android:exported="true"
+            android:permission="org.unityconnect.health.permission.READ_HEALTH" />
+        <provider android:name=".CombinedScreenTimeProvider" android:exported="true"
+            android:authorities="org.unityconnect.health.screen_time"
+            android:permission="org.unityconnect.health.permission.READ_HEALTH" />
+    </application>
+</manifest>

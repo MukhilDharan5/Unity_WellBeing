@@ -1,0 +1,25 @@
+/* Native libadwaita surfaces and typography, with accents on small controls. */
+.sidebar-content { padding: 6px; }
+.nav-section { margin: 18px 12px 6px; }
+.nav-row { padding: 8px 6px; }
+.page-content { padding: 24px; }
+.health-card { padding: 20px; }
+.card-grid > flowboxchild { padding: 0; outline-offset: 3px; }
+.metric-card { padding: 16px; }
+.metric-card button { min-height: 0; padding: 0; }
+.stat-value { font-size: 28px; }
+.activity-value { font-size: 22px; }
+.icon-tile { padding: 8px; }
+.dot { min-width: 7px; min-height: 7px; border-radius: 99px; margin: 5px 0; background-color: currentColor; }
+.link-button { padding: 3px 0; min-height: 18px; color: @accent_color; }
+.dark .link-button { color: mix(@accent_color, @window_fg_color, .3); }
+.sample-badge { padding: 4px 8px; }
+.activity-list { background: transparent; }
+.activity-list row { padding: 12px 0; }
+.empty-state { padding: 24px; }
+.form-content { padding: 12px 24px 24px; }
+.form-hint { margin: 8px 0; }
+.breathing-circle { border-radius: 99px; padding: 40px; margin: 12px; }
+.mood-choice { padding: 12px 8px; font-size: 26px; }
+.compact .page-content { padding: 16px 18px 24px; }
+.compact .health-card { padding: 16px; }

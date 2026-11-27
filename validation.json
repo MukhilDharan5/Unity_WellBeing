@@ -1,0 +1,82 @@
+{
+  "version": "0.4.0",
+  "date": "2026-11-24",
+  "hero_text": false,
+  "passed": {
+    "desktop_tests": 38,
+    "android_usage_tests": 5,
+    "android_health_tests": 6,
+    "rust_wellbeing_and_registry_tests": 2,
+    "recorder_dbus_integration": "GNOME and KWin with synthetic data and fake lock state",
+    "live_kwin_script": "Temporary script against mock receiver, unloaded after verification",
+    "native_ui": "All 9 pages; 1200px and 390px screenshots; 360px minimum-width assertions",
+    "builds": [
+      "Linux unityd",
+      "Linux unityctl",
+      "Android companion debug APK",
+      "Android WellBeing health debug APK",
+      "Python wheel"
+    ]
+  },
+  "requires_setup": [
+    "Install updated Linux daemon and CLI and restart daemon",
+    "Install WellBeing and enable compositor bridge",
+    "Enable desktop recording",
+    "Install companion update and grant phone usage access and enable Screen time",
+    "Enable phone sync in WellBeing"
+  ],
+  "limits": [
+    "Physical paired-phone end-to-end sync not verified",
+    "Android usage events may have incomplete retained history",
+    "KWin counts focused unlocked screen time without an idle cutoff",
+    "GNOME extension syntax checked; live GNOME collection not tested in this Plasma session"
+  ],
+  "ui_cleanup_and_health_retirement": {
+    "date": "2026-11-24",
+    "desktop_tests": 39,
+    "android_health_tests": 6,
+    "android_release_build": "passed offline",
+    "android_signing": "original migrated key",
+    "native_ui": "All nine pages inspected; About has no app icon; 1200px and 390px screenshots reviewed",
+    "migration": "Original SQLite schema and every table preserved; 9555 local files verified by SHA-256; original source and integration patch archived",
+    "installer": "Legacy launch-health compatibility and one-time database migration verified",
+    "python_wheel": "rebuilt, private migration data excluded",
+    "physical_android_ui": "not checked on a device",
+    "old_source_folder": "deleted after final verification",
+    "installed_desktop": "updated with canonical data import and legacy command compatibility"
+  },
+  "combined_phone_screen_time_2026_11_27": {
+    "desktop_tests": {
+      "passed": 40,
+      "skipped": 1
+    },
+    "android_wellbeing_tests": 10,
+    "android_companion_usage_tests": 5,
+    "rust_wellbeing_tests": 2,
+    "builds": [
+      "WellBeing signed release APK",
+      "Unity companion debug APK",
+      "Linux unityd release"
+    ],
+    "installed": [
+      "WellBeing Android",
+      "Unity Android companion",
+      "desktop phone_usage module",
+      "Linux unityd"
+    ],
+    "physical_device": "Samsung Galaxy M35, Android 17",
+    "verified": [
+      "Seven-day usage import and return summaries over the paired connection",
+      "Combined total, computer/phone breakdown, counted-once overlap and sync timestamp on phone",
+      "Automatic refresh advanced the phone timestamp after the diagnostic exited",
+      "Phone-only total and per-app measurement continue separately"
+    ],
+    "native_android_usage_records": "Read only; no changes to system screen-time measurement",
+    "hotspot": {
+      "cause": "Samsung Routines notification listener was not receiving trigger notifications",
+      "repair": "Refreshed its existing notification access without changing routine conditions or actions",
+      "verified": "Hotspot ON and OFF through Unity commands with observed phone state after app updates",
+      "final_state": "off"
+    }
+  }
+}

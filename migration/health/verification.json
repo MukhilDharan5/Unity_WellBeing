@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-24",
+  "database": "SQLite integrity check and all table contents match",
+  "source_archive_sha256": "604d9582f04393b600cd83bd5e53a96f4689610d90f11276b7f2b4e13ae0d078",
+  "copied_files_verified_by_sha256": {
+    ".tools": 9537,
+    "dist/legacy-health": 12,
+    "screenshots/legacy-health": 5,
+    "android/.signing": 1
+  },
+  "retired_source_folder_deleted": true,
+  "installed_launcher_migrated": true,
+  "android_release_certificate_matches_original": true
+}

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Unity WellBeing
+Comment=Screen time and health across your devices
+Exec=unity-wellbeing
+Icon=org.unityconnect.WellBeing
+Terminal=false
+Type=Application
+Categories=Utility;GTK;GNOME;
+Keywords=screentime;wellbeing;health;fitness;steps;sleep;water;wellness;
+StartupNotify=true
+StartupWMClass=org.unityconnect.WellBeing

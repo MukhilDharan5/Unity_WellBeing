@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.local-data/
+.tools/
+*.db*
+android/.gradle/
+android/.kotlin/
+android/local.properties
+android/.signing/

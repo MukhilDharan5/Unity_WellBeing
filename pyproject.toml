@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unity-wellbeing"
+version = "0.4.0"
+description = "Screen time and health together, with native libadwaita and paired Android sync"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+
+[project.scripts]
+unity-wellbeing = "unity_wellbeing.cli:main"
+
+[tool.setuptools]
+packages = ["unity_wellbeing"]
+include-package-data = false
+
+[tool.setuptools.package-data]
+unity_wellbeing = ["data/*.css", "data/*.desktop", "data/*.xml", "data/icons/scalable/actions/*.svg", "data/icons/scalable/apps/*.svg"]
+
+[tool.setuptools.data-files]
+"share/applications" = ["unity_wellbeing/data/org.unityconnect.WellBeing.desktop"]
+"share/icons/hicolor/scalable/apps" = ["unity_wellbeing/data/icons/scalable/apps/org.unityconnect.WellBeing.svg", "unity_wellbeing/data/icons/scalable/apps/org.unityconnect.WellBeing-symbolic.svg"]

@@ -1,0 +1,13 @@
+{
+  "KPlugin": {
+    "Id": "unity-wellbeing",
+    "Name": "Unity WellBeing",
+    "Description": "Report focused application identities to the opt-in Unity WellBeing recorder",
+    "Version": "0.4.0",
+    "License": "MIT",
+    "Authors": [{"Name": "Unity contributors"}]
+  },
+  "X-Plasma-API": "javascript",
+  "X-Plasma-MainScript": "code/main.js",
+  "KPackageStructure": "KWin/Script"
+}
